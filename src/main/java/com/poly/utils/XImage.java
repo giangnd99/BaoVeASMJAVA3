@@ -29,17 +29,14 @@ public class XImage {
         if (fileName == null || fileName.isEmpty()) {
             throw new IOException("Tên tệp không hợp lệ");
         }
-        String localDirectory = "webapp/images";
-        localDirectory = createDirectory(localDirectory).getPath();
+
         createDirectory(saveDirectory);
 
         // Đảm bảo thư mục tồn tại trước khi lưu
         File destFile = new File(saveDirectory + File.separator + fileName);
-        File localFile = new File(localDirectory + File.separator + fileName);
-        System.out.println(localFile.getAbsolutePath());
+
         try (InputStream inputStream = part.getInputStream()) {
             Files.copy(inputStream, destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Files.copy(inputStream, localFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
             throw new IOException("Lỗi khi lưu tệp: " + fileName, e);
         }
@@ -77,5 +74,16 @@ public class XImage {
             return file.delete();  // Trả về true nếu xóa thành công
         }
         return false;  // File không tồn tại
+    }
+
+    // Upload và lưu hình, trả về tên hình
+    public static String uploadAndSaveImage(Part part, String saveDirectory) throws IOException {
+        String fileName = saveFile(part, saveDirectory);
+        return fileName;  // Trả về tên hình đã lưu
+    }
+
+    // Hàm upload và lưu hình dành cho GenericService
+    public static String uploadImageForEntity(Part part, String saveDirectory) throws IOException {
+        return uploadAndSaveImage(part, saveDirectory);
     }
 }

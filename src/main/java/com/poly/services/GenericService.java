@@ -2,10 +2,12 @@ package com.poly.services;
 
 import com.poly.constant.MessageType;
 import com.poly.dao.GenericDAO;
+import com.poly.utils.XImage;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import lombok.Getter;
 
 import java.io.IOException;
@@ -145,6 +147,13 @@ public class GenericService<T> {
                 field.setAccessible(true);
                 String parameterValue = request.getParameter(field.getName());
                 if (parameterValue != null && !parameterValue.isEmpty()) {
+                    if (parameterValue.equals("image")) {
+                        Part part = request.getPart(field.getName());
+                        if (part != null && part.getSize() > 0) {
+                            String fileName = saveImage(part, "uploads");
+                            field.set(entity, fileName);
+                        }
+                    }
                     Object value = convertToFieldType(parameterValue, field.getType());
                     field.set(entity, value);
                 }
@@ -203,4 +212,7 @@ public class GenericService<T> {
         request.setAttribute(messageType.getValue(), message);
     }
 
+    private String saveImage(Part part, String saveDirectory) throws IOException {
+        return XImage.uploadAndSaveImage(part, saveDirectory);
+    }
 }
