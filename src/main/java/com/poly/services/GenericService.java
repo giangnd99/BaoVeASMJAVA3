@@ -184,7 +184,7 @@ public class GenericService<T> {
      * @param value Giá trị cần chuyển đổi
      */
     public void setObject(Object value) {
-        String nameValue = value.getClass().getSimpleName();
+        String nameValue = value.getClass().getSimpleName().toLowerCase();
         request.setAttribute(nameValue, value);
     }
 

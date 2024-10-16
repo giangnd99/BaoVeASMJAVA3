@@ -39,19 +39,19 @@
                                       class="mx-1 mx-md-4">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="idUser">ID của bạn</label>
-                                        <input type="text" id="idUser" name="userId" value="${Users.id}" readonly
+                                        <input type="text" id="idUser" name="userId" value="${users.id}" readonly
                                                class="form-control"/>
                                     </div>
                                     <!-- Tên của bạn -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="fullname">Tên của bạn</label>
-                                        <input type="text" id="fullname" name="fullname" value="${Users.fullname}"
+                                        <input type="text" id="fullname" name="fullname" value="${users.fullname}"
                                                class="form-control"/>
                                     </div>
                                     <!-- Sinh nhật -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="birthday">Sinh nhật</label>
-                                        <input type="date" id="birthday" name="birthday" value="${Users.birthday}"
+                                        <input type="date" id="birthday" name="birthday" value="${users.birthday}"
                                                class="form-control"/>
                                     </div>
                                     <!-- Giới tính -->
@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="gender"
-                                                   id="maleGender" value="true" ${Users.gender?'checked':''}/>
+                                                   id="maleGender" value="true" ${users.gender?'checked':''}/>
                                             <label class="form-check-label" for="maleGender">Nam</label>
                                         </div>
                                     </div>
@@ -72,30 +72,30 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example3c">Email của bạn</label>
                                         <input type="email" id="form3Example3c" name="email" class="form-control"
-                                               value="${Users.email}"/>
+                                               value="${users.email}"/>
                                     </div>
                                     <!-- Số điện thoại -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="phone">Số điện thoại của bạn</label>
                                         <input type="number" id="phone" name="phone" class="form-control"
-                                               value="${Users.phone}"/>
+                                               value="${users.phone}"/>
                                     </div>
                                     <!-- Mật khẩu -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example4c">Mật khẩu</label>
                                         <input type="password" id="form3Example4c" name="password" class="form-control"
-                                               value="${Users.password}"/>
+                                               value="${users.password}"/>
                                     </div>
                                     <div class="gender-section">
                                         <h6>Vai trò:</h6>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="role"
-                                                   id="admin" value="true" ${Users.role?'checked':''}/>
+                                                   id="admin" value="true" ${users.role ?'checked':''}/>
                                             <label class="form-check-label" for="femaleGender">Admin</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="role"
-                                                   id="author" value="false"/>
+                                                   id="author" value="false" ${users.role ?'':'checked'}/>
                                             <label class="form-check-label" for="author">Author</label>
                                         </div>
 

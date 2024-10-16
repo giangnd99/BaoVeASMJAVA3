@@ -10,71 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="173f70b4-00d3-4cf9-b7ee-4cf6ae887e6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/constant/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/HomePageServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/CategoryManage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/CreateCategoryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/DeleteCategoryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/CreateNewsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/DeleteNewsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/NewsManage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/UpdateNewsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/CreateUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/DeleteUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/UpdateUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/UserManage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/InterfaceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/CategoryDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/NewsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/model/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/model/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/InterfaceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/CategoryServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/HomePageServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/NewsServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/CookieUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/EmailUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/PreparedStatementSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/ResultSetExtractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/ServletUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/XImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/XJdbc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/FPT_Polytechnic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/category/list_category.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/message.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/news/create_news.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/news/list_news.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/news/update_news.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/page_header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/search_result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/create_user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/list_users.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/CategoryDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/NewsDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +33,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "giangnd99"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/giangnd99/BaoVeASMJAVA3.git",
+    "accountId": "84c637eb-b246-49ec-8ce5-fe0e4e2704c4"
+  }
+}]]></component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
@@ -129,10 +79,10 @@
     "JUnit.UserDaoTest.listAll.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.30.executor": "Run",
+    "Tomcat Server.Tomcat 10.1.30.executor": "Debug",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/FPT POLYTECHNIC/kì 4/Java3/java3_student/demo-baove-java3/src/main/java/com/poly/controller/categories",
     "node.js.detected.package.eslint": "true",
@@ -302,7 +252,7 @@
       <updated>1729063327181</updated>
       <workItem from="1729063328152" duration="6942000" />
       <workItem from="1729070548498" duration="4941000" />
-      <workItem from="1729076641802" duration="15896000" />
+      <workItem from="1729076641802" duration="16672000" />
     </task>
     <servers />
   </component>
@@ -321,6 +271,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java</url>
           <line>8</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp</url>
+          <line>92</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java</url>
@@ -360,5 +315,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
