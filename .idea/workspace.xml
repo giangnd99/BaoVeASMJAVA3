@@ -10,9 +10,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="173f70b4-00d3-4cf9-b7ee-4cf6ae887e6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/SearchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UsersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/SearchServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/SearchUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/CategoryManage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/CreateCategoryServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/categories/DeleteCategoryServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/CreateNewsServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/DeleteNewsServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/NewsManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/user/ManageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/news/UpdateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/user/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/CreateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/user/DeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/DeleteUserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/UpdateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/controller/user/CreateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/controller/users/UserManage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/dao/InterfaceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/dao/InterfaceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/CategoryDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/NewsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/model/News.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/model/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/utils/XImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/XImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/CategoryServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/NewsServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poly/utils/XJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poly/utils/XJdbc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/category/list_category.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/news/create_news.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/news/list_news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/book/manage_book.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/news/update_news.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/search_result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/create_user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/list_users.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/CategoryDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/NewsDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/NewsDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/poly/dao/impl/UserDaoTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +64,9 @@
       <list>
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -229,8 +269,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CategoryDAOTest.listAll" />
         <item itemvalue="JUnit.NewsDAOTest.listAll" />
+        <item itemvalue="JUnit.CategoryDAOTest.listAll" />
         <item itemvalue="JUnit.UserDaoTest.listAll" />
       </list>
     </recent_temporary>
@@ -254,7 +294,13 @@
       <workItem from="1729063328152" duration="6942000" />
       <workItem from="1729070548498" duration="4941000" />
       <workItem from="1729076641802" duration="16985000" />
-      <workItem from="1729095281217" duration="384000" />
+      <workItem from="1729095281217" duration="1306000" />
+      <workItem from="1729126601321" duration="3613000" />
+      <workItem from="1729143301118" duration="5806000" />
+      <workItem from="1729149784654" duration="5470000" />
+      <workItem from="1729161058969" duration="11505000" />
+      <workItem from="1729388831109" duration="6458000" />
+      <workItem from="1729563454628" duration="3266000" />
     </task>
     <servers />
   </component>
@@ -264,38 +310,156 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
           <line>19</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/views/user/update_user.jsp</url>
           <line>92</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/impl/UserDao.java</url>
-          <line>38</line>
-          <properties class="com.poly.dao.impl.UserDao" method="listAll">
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/controller/user/CreateServlet.java</url>
+          <line>27</line>
+          <properties class="com.poly.controller.user.CreateServlet" method="doPost">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>84</line>
+          <properties class="com.poly.dao.GenericDAO" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>185</line>
+          <properties class="com.poly.dao.GenericDAO" method="getFieldValue">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/utils/XJdbc.java</url>
+          <line>55</line>
+          <properties class="com.poly.utils.XJdbc" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java</url>
+          <line>38</line>
+          <properties class="com.poly.services.impl.UserServices" method="addEntityFormPage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java</url>
+          <line>53</line>
+          <properties class="com.poly.services.impl.UserServices" method="editEntityFormPage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/impl/SearchServices.java</url>
+          <line>20</line>
+          <properties class="com.poly.services.impl.SearchServices" method="searchByKeyWord">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java</url>
-          <line>188</line>
-          <properties class="com.poly.services.GenericService">
+          <line>105</line>
+          <properties class="com.poly.services.GenericService" method="searchByKeyword">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>39</line>
+          <properties class="com.poly.dao.GenericDAO" method="insertAndReturn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>218</line>
+          <properties class="com.poly.dao.GenericDAO" method="executeInsert">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/impl/UserServices.java</url>
+          <line>64</line>
+          <properties class="com.poly.services.impl.UserServices" method="deleteEntityFromPage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/services/GenericService.java</url>
+          <line>95</line>
+          <properties class="com.poly.services.GenericService" method="deleteEntity">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>115</line>
+          <properties class="com.poly.dao.GenericDAO" method="delete">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/poly/dao/GenericDAO.java</url>
+          <line>133</line>
+          <properties class="com.poly.dao.GenericDAO" method="findByUniqueField">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

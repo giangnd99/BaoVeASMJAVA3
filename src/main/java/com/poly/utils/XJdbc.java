@@ -5,7 +5,7 @@ import java.sql.*;
 public class XJdbc {
 
     static Connection connection;
-    static String databaseName = "newswebdb";
+    static String databaseName = "asmdb";
     static String JDBC_URL = "jdbc:mysql://localhost:3306/" + databaseName;
     static String USERNAME = "root";
     static String PASSWORD = "root";

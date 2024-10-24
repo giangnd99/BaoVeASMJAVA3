@@ -1,23 +1,27 @@
-package com.poly.controller.users;
+package com.poly.controller.user;
 
 import com.poly.services.impl.UserServices;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.Serial;
 
-@WebServlet("/create_user")
-public class CreateUserServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet("/update_user")
+@MultipartConfig
+public class UpdateServlet extends HttpServlet {
+    @Serial
+    private static final long serialVersionUID = -6725822377987848189L;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserServices userService = new UserServices(req, resp);
+        UserServices service = new UserServices(req, resp);
         try {
-            userService.loadCreateFormPage();
+            service.loadEditFormPage();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -25,9 +29,9 @@ public class CreateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserServices userService = new UserServices(req, resp);
+        UserServices service = new UserServices(req, resp);
         try {
-            userService.addEntityFormPage();
+            service.editEntityFormPage();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

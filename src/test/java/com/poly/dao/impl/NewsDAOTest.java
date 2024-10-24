@@ -1,6 +1,6 @@
 package com.poly.dao.impl;
 
-import com.poly.model.News;
+import com.poly.model.Users;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,9 +11,9 @@ class NewsDAOTest {
 
     @Test
     void listAll() {
-        NewsDAO dao = new NewsDAO("title");
+        UsersDAO dao = new UsersDAO("id");
         try {
-            List<News> list = dao.listAll();
+            List<Users> list = dao.listAll();
             assertNotNull(list);
         } catch (Exception e) {
             throw new RuntimeException(e);

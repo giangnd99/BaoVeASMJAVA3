@@ -8,9 +8,9 @@ public interface InterfaceDAO<T>{
 
     T update(T t) throws Exception;
 
-    T get(Integer id) throws Exception;
+    T get(String id) throws Exception;
 
-    boolean remove(Integer id) throws Exception;
+    boolean remove(String id) throws Exception;
 
     List<T> listAll() throws Exception;
 }

@@ -12,7 +12,9 @@ import lombok.Getter;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,25 +39,21 @@ public class GenericService<T> {
      * Load danh sách các đối tượng
      *
      * @param list Đối tượng danh sách cần load
-     * @param uri  Đường dẫn URI cần forward
      * @throws ServletException, IOException Lỗi khi forward trang
      */
-    public void loadList(List<T> list, String listName, String uri) throws ServletException, IOException {
+    public void loadList(List<T> list, String listName) {
         request.setAttribute(listName, list);
-        forward(uri);
     }
 
     /**
      * Load một đối tượng theo id
      *
-     * @param id  Id của đối tượng cần load
-     * @param uri Đường dẫn URI cần forward
+     * @param id  Id của đối tượng cần load hoặc dữ liệu unique
      * @throws Exception Lỗi khi forward trang
      */
-    public void loadEntity(int id, String uri) throws Exception {
+    public void loadEntity(String id) throws Exception {
         T entity = dao.findById(id);
         setObject(entity);
-        forward(uri);
     }
 
     /**
@@ -78,12 +76,11 @@ public class GenericService<T> {
      * Sửa một đối tượng
      *
      * @param entity Đối tượng cần sửa
-     * @param id     Id của đối tượng
      * @throws Exception
      */
-    public boolean editEntity(T entity, int id) throws Exception {
+    public boolean editEntity(T entity) throws Exception {
         readFields(entity);
-        entity = dao.update(entity, id);
+        entity = dao.update(entity);
         if (entity != null) {
             return true;
         }
@@ -96,7 +93,7 @@ public class GenericService<T> {
      * @param id Id của đối tượng cần xóa
      * @throws SQLException
      */
-    public boolean deleteEntity(int id) throws Exception {
+    public boolean deleteEntity(String id) throws Exception {
         return dao.delete(id);
     }
 
@@ -104,14 +101,24 @@ public class GenericService<T> {
      * Tìm kiếm đối tượng theo tên
      *
      * @param keyword Từ khoá cần tìm
-     * @param uri     Đường dẫn URI cần forward
      * @throws ServletException, IOException
      */
-    public void searchEntities(String keyword, String uri) throws Exception {
-        List<T> list = dao.searchByKeyword(keyword);
-        request.setAttribute("listResult", list);
-        request.setAttribute("keyword", keyword);
-        forward(uri);
+    public List<T> searchByKeyword(String keyword) throws SQLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InvocationTargetException {
+        List<T> resultList = new ArrayList<>();
+        List<T> allEntities = dao.findAll();
+
+        for (T entity : allEntities) {
+            Field[] fields = entity.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                Object value = field.get(entity);
+                if (value != null && value.toString().toLowerCase().contains(keyword.toLowerCase())) {
+                    resultList.add(entity);
+                    break; // Nếu tìm thấy kết quả khớp, thêm entity vào danh sách và thoát vòng lặp
+                }
+            }
+        }
+        return resultList;
     }
 
     /**
@@ -179,13 +186,14 @@ public class GenericService<T> {
             return Boolean.parseBoolean(value);
         } else if (fieldType.equals(Double.class) || fieldType.equals(double.class)) {
             return Double.parseDouble(value);
+        } else if (fieldType.equals(Float.class) || fieldType.equals(float.class)) {
+            return Float.parseFloat(value);
         } else if (fieldType.equals(java.util.Date.class)) {
             return java.sql.Date.valueOf(value);
         } else {
             return value;
         }
     }
-
     /**
      * Chuyển đổi giá trị từ Object sang kiểu dữ liệu của trường
      * Ánh xạ value với name value

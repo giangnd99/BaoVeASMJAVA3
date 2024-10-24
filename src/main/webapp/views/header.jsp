@@ -46,7 +46,7 @@
 <div class="header-container">
     <div class="header-logo text-center">
         <a href="${pageContext.request.contextPath}" class="text-decoration-none">
-            <h1 class="display-4 text-light">Quản Trị Hệ Thống - Viết Báo</h1>
+            <h1 class="display-4 text-light">- Quản Trị Hệ Thống -</h1>
         </a>
     </div>
 </div>
@@ -58,7 +58,7 @@
         </button>
         <c:set var="baseUri" value="${pageContext.request.contextPath}"/>
         <div class="collapse navbar-collapse" id="topNavbar">
-            <form action="${baseUri}/search_admin" method="get" class="d-flex me-auto">
+            <form action="${baseUri}/search" method="get" class="d-flex me-auto">
                 <input type="search" name="keyword" class="form-control me-2" placeholder="Tìm kiếm" required/>
                 <button type="submit" class="btn btn-outline-light">Tìm</button>
             </form>
@@ -69,31 +69,8 @@
                 </li>
                 <%--                <c:if test="${loggedUser.role == true}">--%>
                 <li class="nav-item">
-                    <a href="${baseUri}/list_category" class="nav-link">Quản Lý Loại Tin</a>
+                    <a href="${baseUri}/manage_user" class="nav-link">Quản Lý User</a>
                 </li>
-                <li class="nav-item">
-                    <a href="${baseUri}/list_news" class="nav-link">Quản Lý Tin Tức</a>
-                </li>
-                <li class="nav-item">
-                    <a href="${baseUri}/list_users" class="nav-link">Quản Lý Người Dùng</a>
-                </li>
-                <%--                </c:if>--%>
-
-                <%--                <!-- Luôn hiển thị Quản Lý Tin Tức -->--%>
-                <%--                <c:if test="${loggedUser.role == false}">--%>
-                <%--                    <li class="nav-item">--%>
-                <%--                        <a href="${baseUri}/list_news" class="nav-link">Quản Lý Tin Tức</a>--%>
-                <%--                    </li>--%>
-                <%--                </c:if>--%>
-
-                <li class="nav-item">
-                    <a href="${pageContext.request.contextPath}/logout" class="nav-link">Đăng Xuất</a>
-                </li>
-                <%--                <c:if test="${loggedUser != null}">--%>
-                <%--                    <li class="nav-item">--%>
-                <%--                        <a href="view_profile" class="nav-link">Xin Chào ${loggedUser.fullname}</a>--%>
-                <%--                    </li>--%>
-                <%--                </c:if>--%>
             </ul>
         </div>
     </div>

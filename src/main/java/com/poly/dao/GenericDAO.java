@@ -39,16 +39,16 @@ public class GenericDAO<T> {
      */
     public T insertAndReturn(T entity) throws IllegalAccessException, SQLException, InstantiationException, InvocationTargetException, NoSuchMethodException {
         // Kiểm tra xem đối tượng đã tồn tại theo trường duy nhất chưa
-        if (findByUniqueField(String.valueOf(uniqueField), getFieldValue(entity, String.valueOf(uniqueField))) != null) {
+        if (findByUniqueField(uniqueField, getFieldValue(entity, uniqueField)) != null) {
             return null;
         }
 
         // Thực hiện chèn dữ liệu, kiểm tra xem trường uniqueField có phải là ID không
-        if (uniqueField.getClass().getSimpleName().toLowerCase().contains("id")) {
+        if (uniqueField.equals("id")) {
             executeInsert(entity, true);
         } else {
             executeInsert(entity, false);
-            entity = findByUniqueField(String.valueOf(uniqueField), getFieldValue(entity, String.valueOf(uniqueField)));
+            entity = findByUniqueField(uniqueField, getFieldValue(entity, uniqueField));
         }
         cache.add(entity);
         return entity;
@@ -72,20 +72,20 @@ public class GenericDAO<T> {
      * @param id Định danh của đối tượng
      * @return Đối tượng tìm thấy hoặc null
      */
-    public T findById(int id) throws SQLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        return findByUniqueField("id", id);
+    public T findById(String id) throws SQLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        return findByUniqueField(uniqueField, id);
     }
 
     /**
      * Cập nhật đối tượng trong bảng
      *
      * @param entity Đối tượng cần cập nhật
-     * @param id     Định danh của đối tượng cần cập nhật
      * @return Đối tượng sau khi đã cập nhật
      */
-    public T update(T entity, int id) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
+    public T update(T entity) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
         StringBuilder sql = new StringBuilder("UPDATE ");
         sql.append(type.getSimpleName().toLowerCase()).append(" SET ");
+        Object uniqueValue = null;
 
         Field[] fields = type.getDeclaredFields();
         StringBuilder setClause = new StringBuilder();
@@ -93,47 +93,37 @@ public class GenericDAO<T> {
 
         for (Field field : fields) {
             field.setAccessible(true);
-            if (!field.getName().equalsIgnoreCase("id")) { // Bỏ qua trường id
-                setClause.append(field.getName()).append(" = ?, ");
-                params.add(field.get(entity));
+            setClause.append(field.getName()).append(" = ?, ");
+            params.add(field.get(entity));
+            if (field.getName().equalsIgnoreCase(uniqueField)) {
+                uniqueValue = field.get(entity);
             }
         }
 
         sql.append(setClause, 0, setClause.length() - 2);
-        sql.append(" WHERE id = ?");
-        params.add(id);
-
+        sql.append(" WHERE ").append(uniqueField).append(" = ?");
+        params.add(uniqueValue);
         XJdbc.update(sql.toString(), params.toArray());
-        return findById(id);
+        return findByUniqueField(uniqueField, getFieldValue(entity, uniqueField));
     }
 
     /**
      * Xóa đối tượng theo id
      *
-     * @param id Định danh của đối tượng
+     * @param uniqueField Định danh của đối tượng
      * @return true nếu xóa thành công, ngược lại false
      */
-    public boolean delete(int id) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
-        T entity = findById(id);
+    public boolean delete(String uniqueField) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
+        T entity = findByUniqueField(this.uniqueField, uniqueField);
         if (entity != null) {
-            String sql = "DELETE FROM " + type.getSimpleName().toLowerCase() + " WHERE id = ?";
-            XJdbc.update(sql, id);
+            String sql = "DELETE FROM " + type.getSimpleName().toLowerCase() + " WHERE " + this.uniqueField + " = ?";
+            XJdbc.update(sql, uniqueField);
             return true;
         }
         return false;
     }
 
-    /**
-     * Tìm kiếm đối tượng theo từ khóa
-     *
-     * @param keyword Từ khóa tìm kiếm
-     * @return Danh sách đối tượng khớp với từ khóa
-     */
-    public List<T> searchByKeyword(String keyword) throws SQLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        String sql = "SELECT * FROM " + type.getSimpleName().toLowerCase() + " WHERE LOWER(title) LIKE ? OR LOWER(content) LIKE ?";
-        ResultSet resultSet = XJdbc.query(sql, "%" + keyword.toLowerCase() + "%", "%" + keyword.toLowerCase() + "%");
-        return mapResultSetToEntityList(resultSet);
-    }
+
 
     /**
      * Tìm kiếm đối tượng theo trường duy nhất
@@ -218,6 +208,8 @@ public class GenericDAO<T> {
             return resultSet.getLong(columnName);
         } else if (fieldType.equals(Double.class) || fieldType.equals(double.class)) {
             return resultSet.getDouble(columnName);
+        } else if (fieldType.equals(Float.class) || fieldType.equals(float.class)) {
+            return resultSet.getFloat(columnName);
         } else {
             return resultSet.getObject(columnName);
         }
@@ -235,13 +227,10 @@ public class GenericDAO<T> {
         StringBuilder values = new StringBuilder();
 
         for (Field field : fields) {
-            if (hasId || !field.getName().equalsIgnoreCase("id")) { // Bỏ qua trường id tự tăng nếu không có id
                 field.setAccessible(true);
                 columns.append(field.getName()).append(",");
                 values.append("?,");
-            }
         }
-
         sql.append(columns, 0, columns.length() - 1).append(") VALUES (");
         sql.append(values, 0, values.length() - 1).append(")");
 
